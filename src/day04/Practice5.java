@@ -2,7 +2,7 @@ package day04;
 
 import java.util.Scanner;
 
-public class Practice1 {
+public class Practice5 {
     public static void main(String[] args) {
 
         /*[실습] * 제출용 */

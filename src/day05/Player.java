@@ -6,5 +6,6 @@ public class Player {
     int speed;
 
     public void speeded() {
+
     }
 }
