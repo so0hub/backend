@@ -186,25 +186,25 @@ int july4 = 11738700;
         for(int i = 1 ; i <= july1/100 ; i++){
             System.out.print("■");
         }
-        System.out.println(july1/100 + "만원");
+        System.out.println(july1 + "만원");
 
 
         for(int i = 1 ; i <= july2/100 ; i++){
             System.out.print("■");
         }
-        System.out.println(july2/100 + "만원");
+        System.out.println(july2 + "만원");
 
 
         for(int i = 1 ; i <= july3/100 ; i++){
             System.out.print("■");
         }
-        System.out.println(july3/100 + "만원");
+        System.out.println(july3 + "만원");
 
 
         for(int i = 1 ; i <= july4/100 ; i++){
             System.out.print("■");
         }
-        System.out.println(july4/100 + "만원");
+        System.out.println(july4 + "만원");
 
 
 
