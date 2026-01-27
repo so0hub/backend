@@ -122,6 +122,21 @@ public class Practice7 {
 2. 첫 번째 객체에는 "손흥민", 90, 95를, 두 번째 객체에는 "이강인", 85, 92를 각각 저장하세요.
 3. 두 객체의 power와 speed의 합을 각각 계산하고, 합이 더 높은 선수의 이름을 출력하세요.*/
 
+        // JS : 선언의 객체 : class A{ } -> new A();  , 비선언 객체 : let a = { }
+        // JAVA : 선언적객체 : class a{ } -> new a();
+        // 클래스명은 무조건 첫 글자 대문자로 시작한다.
+        // 클래스(객체 표현한 설계도/논리적)
+        // vs 객체(속성과 기능을 갖는 대상-추상적, 아직 컴퓨터에 실제로 존재하기 전)
+        // vs 인스턴스(클래스 기반으로 (메모리)물리적 생성)
+        // new Player(); // new : 인스턴스화 키워드 , 메모리 생성되면서 주소값 받는다.
+        // *생성된 객체는 변수에 저장하지 않으면 일정 시간이 지나면 GC(Garvage Collector/쓰레기 수집기)가 삭제한다.
+        // Player 주소록1 = new Player(); => p1 = 인스턴스(101번지)
+        // 주소록1.name = "손흥민";  => p1 변수가 갖는 101번지(인스턴스) 접근하여 name 속성에 접근
+        // .(접근연산자/참조연산자)
+        //  주소록1.name = "손흥민"; 주소록1.power = 90;
+        // 생각하기 : 객체(주소값101번지) -> 객체내속성(name 주소값101-1번지)
+
+        new Player();
         Player player1 = new Player(); // 객체1 생성
         Player player2 = new Player(); // 객체2 생성
         player1.name = "손흥민"; player1.power = 90; player1.speed = 95;
@@ -143,8 +158,15 @@ public class Practice7 {
     menu2.name = "된장찌개";    menu2.price=8000;   menu2.isSignature=false;
     menu3.name = "계란찜";    menu3.price=3000;   menu3.isSignature=false;
 
-    if(menu1.isSignature){
+    if(menu1.isSignature==true){
         System.out.println("[대표메뉴]"+"["+menu1.name+"] :"+ "[" + menu1.price + "]원");}
+
+    if(menu2.isSignature==true){
+        System.out.println("[대표메뉴]"+"["+menu2.name+"] :"+ "[" + menu2.price + "]원");}
+
+    if(menu3.isSignature==true){
+        System.out.println("[대표메뉴]"+"["+menu3.name+"] :"+ "[" + menu3.price + "]원");}
+
 
 /*[문제 10] UserProfile 클래스를 만드세요. name(문자열), age(정수), mbti(문자열) 멤버 변수를 가집니다.
 1. main 함수에서 UserProfile 객체를 하나 생성하세요.
@@ -154,15 +176,22 @@ public class Practice7 {
 
         UserProfile user1 = new UserProfile(); // 객체1 생성
 
-        Scanner scan = new Scanner(System.in); // 입력받아
+        Scanner scan = new Scanner(System.in); // 입력 객체
+        System.out.print("이름 입력: ");
+        String name = scan.next();
 
-        System.out.print("이름 : ");    user1.name = scan.next();
-        System.out.print("나이 : ");      user1.age = scan.nextInt();
-        System.out.println("MBTI : ");      user1.mbti = scan.next();
+        System.out.print("나이 입력: ");
+        int age = scan.nextInt();
+
+        System.out.print("MBTI 입력: ");
+        String mbti = scan.next(); // 입력받은값을 객체 내 저장하기.
+
+        // 입력받을 값을 객체 내 저장하기, 객체 변수명(검정색) 속성명(보라색) = 변수명(검정색)
+        user1.name = name;
+        user1.age = age;
+        user1.mbti = mbti;
 
         System.out.print("--- 프로필 ---");
-        System.out.print("이름 : [" +user1.name+"]");
-        System.out.print( "나이: [" +user1.age+ "]");
-        System.out.print("MBTI: [" +user1.mbti+ "]");
+        System.out.printf("이름 : %s 나이 : %d MBTI : %s \n" , user1.name , user1.age , user1.mbti);
     }
 }
