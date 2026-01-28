@@ -186,7 +186,7 @@ public class Practice7 {
         System.out.print("MBTI 입력: ");
         String mbti = scan.next(); // 입력받은값을 객체 내 저장하기.
 
-        // 입력받을 값을 객체 내 저장하기, 객체 변수명(검정색) 속성명(보라색) = 변수명(검정색)
+        // 입력받을 값을 객체 내 저장하기, 객체 변수명(흰색) 속성명(보라색) = 변수명(흰색)
         user1.name = name;
         user1.age = age;
         user1.mbti = mbti;

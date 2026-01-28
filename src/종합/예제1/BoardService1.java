@@ -2,7 +2,7 @@ package 종합.예제1; // 해당 클래스의 패키지/폴더 위치
 
 import java.util.Scanner;
 
-public class BoardService { // class START
+public class BoardService1 { // class START
   // 자바는 무조건 클래스 단위로 실행한다.
 
   public static void main(String[] args) { // main START
