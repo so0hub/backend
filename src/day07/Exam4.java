@@ -38,17 +38,20 @@ public class Exam4 {
 }
 
 
-class D{
+class D {
     // * final 키워드는 초기값 필수
     // final int 최종변수;
-    final double PI = 3.14159
+    final double PI = 3.14159;
     // * static 키워드는 (객체들 간의) 공유변수
     static int point;
     // * 상수 , public static final
-    static  final char name = 'A';
+    static final char name = 'A';
 
     // final 메소드 : 오버라이딩/재정의 금지
-    public final void method1(){}
+    public final void method1() {
+    }
 
     // static 메소드 : 객체 유무없이 호출 가능한 메소드
-    public static void method2(){}
+    public static void method2() {
+    }
+}
