@@ -13,7 +13,7 @@ public class Exam4 {
         System.out.println(D.point); // ok
         System.out.println(D.name); // ok .. 상수
 
-        // 객체변수명.고정(final)변수 : 객체 ㅣㅍㄹ요함
+        // 객체변수명.고정(final)변수 : 객체 필요함
         D d = new D();
         System.out.println(d.PI); // ok
         // d.PI = 3.444; // final이라서 수정 불가능
