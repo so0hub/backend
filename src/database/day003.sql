@@ -154,7 +154,7 @@ select * from member where maddr = '경기' or maddr = '전남' or maddr = '경�
 select * from member where maddr in( '경기' , '전남' , '경남' ); 				-- 속성명 in( 값1 , 값2 , 값3 );
 # 주의할 점 : null(자료없다는 뜻) 비교연산자 별도 존재함
 select * from member where mphone1 = null; 									-- null은 비교 불가능
-select * from member where mphone1 is null; 								-- 비교 가능
+select * from member where mphone1 is null; 								-- 비교 가능  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!이거 헷갈렸네 is null이야 소영아
 select * from member where mphone1 is not null;								-- 비교 가능
 # 문자패턴 : 속성명 like '문자패턴' , 1) % : 문자대응(개수상관없다)		2) _ : 문자대응(_개수만큼대응)
 select * from member where mname like "에이%";								-- mname 속성값이 '에이'로 시작하는 문자
