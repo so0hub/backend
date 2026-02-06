@@ -2,7 +2,9 @@ package 종합.예제7.view;
 
 import 종합.예제7.controller.BoardController;
 import 종합.예제7.model.dao.BoardDao;
+import 종합.예제7.model.dto.BoardDto;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -32,10 +34,10 @@ import java.util.Scanner;
                 System.out.println("선택>");
                 int ch = scan.nextInt();
 
-                if (ch == 1) {
-                } else if (ch == 2) {
-                } else if (ch == 3) {
-                } else if (ch == 4) {
+                if (ch == 1) { write();
+                } else if (ch == 2) { findAll();
+                } else if (ch == 3) { update();
+                } else if (ch == 4) { delete();
                 } else {
                     System.out.println("[경고] 없는 기능 번호입니다.");}
             } catch (InputMismatchException e) {
@@ -46,4 +48,52 @@ import java.util.Scanner;
             }
          } // for END
     }  // method END
+
+
+
+    // [1] 게시물 등록 view
+    public void write(){ scan.nextLine();
+        System.out.println("내용 : "); String bcontent = scan.nextLine();
+        System.out.println("작성자 : "); String bwriter = scan.next();
+        boolean result = bc.write(bcontent , bwriter);
+        if(result){
+            System.out.println("[안내] 게시물 등록 완료");}
+        else{
+            System.out.println("[경고] 게시물 등록 실패");
+        }
+    }
+
+    // [2] 게시물 전체 조회 view
+    public void findAll(){
+        ArrayList<BoardDto> boards = bc.findAll();
+        for( BoardDto board : boards ){ // 향상된 for문
+            System.out.printf("번호 : %d , 작성일 : %s , 내용 : %s \n" ,
+                    board.getBno() , board.getBdate() , board.getBwriter(), board.getBcontent());
+
+        }
+    }
+
+    // [3] 게시물 수정 view
+    public void update(){
+        System.out.println("수정할 게시물 번호 : "); int bno = scan.nextInt();
+        scan.nextLine(); //  의미없는 nextLine : 밑에 nextline 쓰기 위해서.
+        System.out.println("수정할 내용 : "); String bcontent = scan.nextLine();
+        boolean result = bc.update(bno,bcontent);
+        if(result){
+            System.out.println("[안내] 게시물 수정 완료");}
+        else{
+            System.out.println("[경고] 게시물 수정 실패 또는 없는 게시물 번호 입니다.");
+        }
+    }
+
+    // [4] 게시물 삭제 view
+    public void delete(){
+        System.out.println("삭제할 게시물 번호 : "); int bno = scan.nextInt();
+        boolean result = bc.delete(bno);
+        if(result){
+            System.out.println("[안내] 게시물 삭제 완료");}
+        else{
+            System.out.println("[경고] 게시물 삭제 실패 또는 없는 게시물 번호입니다.");
+        }
+    }
  } // class END

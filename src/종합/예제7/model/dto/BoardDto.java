@@ -11,7 +11,7 @@ public class BoardDto {
     public BoardDto(){} // 기본 생성자
 
     // 오른쪽 클릭하고 전체생성자
-    public BoardDto(String bcontent, String bwriter, String bdate, int bno) {
+    public BoardDto(int bno,String bcontent, String bwriter, String bdate) {
         this.bcontent = bcontent;
         this.bwriter = bwriter;
         this.bdate = bdate;
