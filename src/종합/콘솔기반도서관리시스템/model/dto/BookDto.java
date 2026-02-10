@@ -17,6 +17,10 @@ public class BookDto {
         this.mno = mno;
     }
 
+    public BookDto() {
+
+    }
+
     public int getBno() {
         return bno;
     }
