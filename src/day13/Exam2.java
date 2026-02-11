@@ -5,6 +5,10 @@ import java.util.Arrays;
 public class Exam2 {
     public static void main(String[] args) {
         // Stirng 클래스
+
+        // 다 외우는 건 아니고 그냥 어떤 기능을 하는가 한국어만 외우기.
+
+
         // 1. 문자열  표현 방법 == ** 문자의 배열 **
         char str1 = '유'; // char 한 글자만 저장 가능
         char[] str2 = { '유' , '재' , '석' }; // char 타입 배열
@@ -105,8 +109,12 @@ public class Exam2 {
         System.out.println("자바 프로그래밍 언어".indexOf("프로")); // 3(인덱스)
         System.out.println("자바 프로그래밍 언어".contains("프로")); // true
 
-
-        // 다 외우는 건 아니고 그냥 어떤 기능을 하는가 한국어만 외우기.
+        // 13) .getBytes() , 문자열을 byte 배열[]로 반환/추출
+        byte[] str17 = "ABC".getBytes();
+        System.out.println(Arrays.toString(str17)); // [65, 66, 67] // A가 65번이기 때문에 이런 식으로 나오는 것임.
+        // new String( 문자열바이트 ) , byte 배열 --> 문자열타입
+        String str18 = new String(str17);
+        System.out.println("str18 = " + str18); // str18 = ABC
 
 
     } // main END
