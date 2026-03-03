@@ -62,8 +62,10 @@ public class Practice8 {
 1. 정수 하나를 매개변수로 받아, 그 숫자만큼 "★" 문자를 반복하여 하나의 문자열로 만들어 반환하는 getStars 메소드를 정의하세요.
 2. main 함수에서 getStars(5)를 호출하여 반환된 문자열 "★★★★★"를 출력하세요.*/
 
-//        Visualizer v1 = new Visualizer();
-//        String result7 = v1.getStars();
+        Visualizer v1 = new Visualizer();
+        String result7 = v1.getStars(5);
+
+        System.out.println(result7);
 
 /*[문제 8] ParkingLot 클래스를 만드세요.
 1. 주차 시간(분)을 매개변수로 받아, 요금 규정에 따라 계산된 최종 주차 요금을 반환하는 calculateFee 메소드를 정의하세요.
@@ -73,6 +75,15 @@ public class Practice8 {
 일일 최대 요금: 20,000원
 3. main 함수에서 calculateFee 메소드에 65, 140을 각각 인자로 전달하여 반환된 요금을 출력하세요.*/
 
+        ParkingLot pk1 = new ParkingLot();
+
+        // 65분 인자로 전달해서 호출
+        int fee1 = pk1.calculateFee(65);
+        System.out.println("65분 주차 요금: " + fee1 + "원");
+
+        // 140분 인자로 전달해서 호출
+        int fee2 = pk1.calculateFee(140);
+        System.out.println("140분 주차 요금: " + fee2 + "원");
 
 
 
@@ -132,9 +143,32 @@ class Product{
     }
 }
 
-//class Visualizer{
-//    int 정수 = "★";
-//    for(int index=0 ; index.length-1 ; index++){
-//    void getStars();
-//    }
-//}
+class Visualizer{
+    public String getStars(int count){String stars = ""; // 별을 모아둘 빈 문자열 변수
+
+        for(int i = 0 ; i < count ; i++){stars += "★";}
+        return stars;
+    }
+}
+
+class ParkingLot {
+    public int calculateFee(int minutes) {
+        if (minutes <= 30) return 1000; // 30분 이하는 바로 1000원 반환하고 끝!
+
+        int extraTime = minutes - 30;
+        int extraUnits = extraTime / 10;
+
+        if (extraTime % 10 > 0) {
+            extraUnits++;
+        }
+
+        int totalFee = 1000 + (extraUnits * 500);
+
+        // 일일 최대 요금 20,000원 안 넘게!
+        if (totalFee > 20000) {
+            totalFee = 20000;
+        }
+
+        return totalFee;
+    }
+}
