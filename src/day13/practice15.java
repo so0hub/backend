@@ -2,6 +2,7 @@ package day13;
 
 
 import java.lang.reflect.Method;
+import java.time.LocalDateTime;
 
 public class practice15 {
     public static void main(String[] args) {
@@ -46,13 +47,33 @@ class java.lang.String | forName 성공 | method count:90
 [출력예시]
 int:100, double:3.14, str1:"100", str2:"100"
 */
+// 문자열 -> 기본타입 변환
+int i = Integer.parseInt("100");
+        System.out.println("int = " + i);
+double d = Double.parseDouble("3.14");
+        System.out.println("double = " + d);
+
+// 기본타입 -> 문자열 변환
+String st1 = String.valueOf(100);
+        System.out.println("st1 = " + st1);
+String st2 = String.valueOf(3.14);
+        System.out.println("st2 = " + st2);
+
+
+
 
 /*[문제 5] LocalDateTime.now()로 현재 날짜/시간을 생성하고 지정된 포맷으로 변환 후 +10일, -30일 계산 결과를  출력하시오.
 [출력예시]
 현재:2025년 07월 25일 11:43:11 | +10일:2025-08-04T11:43:11 | -30일:2025-06-25T11:43:11
 */
+        LocalDateTime 현재 = LocalDateTime.now();
+        System.out.println("현재 = " + 현재);
 
+        LocalDateTime 더한날짜 = LocalDateTime.now().plusDays(10);
+        System.out.println("+10일 = " + 더한날짜);
 
+        LocalDateTime 뺀날짜 = LocalDateTime.now().minusDays(30);
+        System.out.println("-30일 = " + 뺀날짜);
 
     } // main END
 } // class END
