@@ -67,13 +67,9 @@ String st2 = String.valueOf(3.14);
 현재:2025년 07월 25일 11:43:11 | +10일:2025-08-04T11:43:11 | -30일:2025-06-25T11:43:11
 */
         LocalDateTime 현재 = LocalDateTime.now();
-        System.out.println("현재 = " + 현재);
-
         LocalDateTime 더한날짜 = LocalDateTime.now().plusDays(10);
-        System.out.println("+10일 = " + 더한날짜);
-
         LocalDateTime 뺀날짜 = LocalDateTime.now().minusDays(30);
-        System.out.println("-30일 = " + 뺀날짜);
+        System.out.println("현재 = " + 현재 + "|" + "+10일 = " + 더한날짜 +"|" + "-30일 = " + 뺀날짜);
 
     } // main END
 } // class END
