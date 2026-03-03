@@ -23,7 +23,7 @@ public class WaitingView {
     public void indexView() {
         for (; ; ) {
             System.out.println("===========맛집 대기 시스템==========");
-            System.out.println("1.대기 등록 2.대기 현황");
+            System.out.println("1.대기 등록 2.대기 현황 3.종료");
             System.out.println("=================================");
             System.out.println("선택>");
             Scanner scan = new Scanner(System.in);
@@ -34,6 +34,9 @@ public class WaitingView {
             else if (ch == 2) {
                 printView();
             } // 2번 입력하면 전체 조회 페이지로 이동
+            else if (ch == 3){
+                endView();
+            }
         }
     }
 
@@ -60,7 +63,14 @@ public class WaitingView {
         for(WaitingDto waiting : waitings){
             System.out.printf("번호 : %d , 연락처 : %s , 인원 : %s \n" , waiting.getNo() , waiting.getPhone() , waiting.getCount() );
         }
+
     } // m END
+
+    // 3) 종료
+    public void endView(){
+        indexView();
+    }
+
 } // class END
 
 

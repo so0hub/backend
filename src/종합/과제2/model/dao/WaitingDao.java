@@ -32,6 +32,7 @@ public class WaitingDao {
     public ArrayList<WaitingDto> doGet(){
         return waitings; // 개별 조회 1개 반환타입 WaitingDto vs 전체 조회 N개 반환타입 ArrayList<WaitingDto>
     }
+
 }
 
 
